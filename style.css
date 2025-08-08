@@ -1,0 +1,170 @@
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #e3e9f2; /* Deep navy blue */
+  color: #181d2f;      /* Soft light text */
+}
+
+.hero {
+  min-height: 70vh;
+  background: linear-gradient(135deg, #181d2f 0%, #283967 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.custom-navbar {
+  background: #c6deed !important;        /* Very light, cool blue */
+  border-bottom: 1.5px solid #e3e9f2;
+  box-shadow: 0 2px 12px 0 rgba(56, 189, 248, 0.05);
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #181d2f !important;              /* Deep blue (theme text color) */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.18s;
+}
+
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover {
+  color: #0e6991 !important;              /* Neon blue accent on hover/active */
+  border-bottom: 2px solid #38bdf8;
+  background: transparent;
+}
+
+.navbar-toggler {
+  border-color: #38bdf8;
+}
+
+
+.accent {
+  font-weight: 800;
+  color: #38bdf8; /* Neon blue accent */
+}
+
+.btn-custom {
+  background: #273568;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: 24px;
+  padding: 8px 26px;
+  transition:background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(56,189,248,0.08);
+}
+.btn-custom:hover, .btn-custom:focus {
+  background: #38bdf8; /* Neon blue on hover */
+  color: #181d2f;
+}
+
+.card, .edu-card {
+  border-radius: 18px;
+  border: 1px solid #232a47; /* Subtle border */
+  box-shadow: 0 3px 24px 0 rgba(24,29,47,0.2);
+  color: #232a47;
+}
+
+.edu-card-header {
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 18px 18px 0 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.edu-card-body {
+  padding: 18px 16px;
+  border-radius: 0 0 18px 18px;
+  color:#232a47;
+}
+
+.profile-img-custom {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #2176ff;         /* Blue border */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 0 0 8px #23272f; /* Soft shadow and outer border to match your bg */
+  background: #e6ecfa;               /* fallback background */
+  transition: box-shadow 0.3s;
+}
+
+.profile-img-custom:hover {
+  box-shadow: 0 8px 32px rgba(33, 118, 255, 0.32), 0 0 0 8px #23272f;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 45vh;
+  }
+}
+/* ---- HERO ENTRANCE ANIMATION ---- */
+@keyframes heroFadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.98);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateX(-8px) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+.intro-text {
+  animation: heroFadeInRight 1.3s cubic-bezier(0.4, 0.85, 0.44, 1) 0.4s both;
+}
+
+/* ---- PROFILE IMAGE POP ENTRANCE ---- */
+@keyframes profilePopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.65) rotateY(-15deg);
+    filter: blur(3px);
+  }
+  75% {
+    opacity: 1;
+    filter: blur(0.5px);
+    transform: scale(1.07) rotateY(3deg);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1) rotateY(0);
+  }
+}
+.profile-img-custom {
+  animation: profilePopIn 1.3s cubic-bezier(0.2, 0.7, 0.4, 1.2) 0.1s both;
+  /* (keep your border, shadow, etc. from earlier) */
+}
+
+/* ---- ACCENT COLOR WAVE ON H1 ---- */
+@keyframes accentWave {
+  50% { color: #2176ff; filter: brightness(1.3);}
+  100% { color: #38bdf8;}
+}
+.accent {
+  animation: accentWave 2.6s cubic-bezier(0.6, 0.1, 0.6, 1) 0.8s both;
+}
+
+/* ---- BUTTON HOVER SHADOW POP ---- */
+.btn-custom, .btn-outline-primary, .btn-primary {
+  transition: transform 0.22s cubic-bezier(.34,1.56,.64,1), box-shadow 0.21s;
+}
+.btn-custom:hover, .btn-outline-primary:hover, .btn-primary:hover,
+.btn-custom:focus, .btn-outline-primary:focus, .btn-primary:focus {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 28px 0 rgba(33,118,255,0.18);
+}
+
+/* ---- CARD GLOW ON HOVER ---- */
+.card:hover, .edu-card:hover {
+  box-shadow: 0 8px 38px 0 rgba(56,189,248,0.19), 0 2px 8px 0 rgba(24,29,47,0.12);
+  border-color: #38bdf8;
+  transition: box-shadow 0.3s, border-color 0.2s;
+}
