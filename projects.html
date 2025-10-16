@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Projects | Sandul Dulhan</title>
+
+  <!-- Bootstrap (match your main page) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- (Optional) AOS + Icons if you use them on main page -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"/>
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Subtle top glow */
+    .subtle-hero {
+      background: radial-gradient(1200px 500px at 50% -100px, rgba(13,110,253,.08), transparent 70%);
+    }
+
+    /* Filters + active state */
+    .filters { display:flex; gap:.6rem; flex-wrap:wrap; }
+    .filters .filter-btn{
+      padding:.45rem .8rem;
+      border:1.5px solid #111;
+      border-radius:.6rem;
+      background:#fff;
+      font-weight:600;
+      line-height:1;
+    }
+    .filters .filter-btn.active{
+      background:#0d6efd; color:#fff; border-color:#0d6efd;
+    }
+
+    /* Tag chips (fixes "ReactNodeMySQL" running together) */
+    .tags{ display:flex; flex-wrap:wrap; gap:.4rem; }
+    .tags .tag{
+      display:inline-block;
+      font-size:.85rem;
+      padding:.2rem .55rem;
+      background:#f1f5ff;
+      border:1px solid #e0e8ff;
+      border-radius:.6rem;
+    }
+
+    /* Card hover polish */
+    .card{ transition: transform .15s ease, box-shadow .15s ease; }
+    .card:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+
+    /* Soft button (if not already in your main CSS) */
+    .btn-soft {
+      background: rgba(13,110,253,.08);
+      border: 1px solid rgba(13,110,253,.2);
+      color:#0d6efd;
+    }
+    .btn-soft:hover{ background: rgba(13,110,253,.14); color:#0b5ed7; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="subtle-hero py-5">
+    <div class="container px-3 px-md-5 text-center">
+      <h1 class="mb-2" data-aos="zoom-in">All Projects</h1>
+      <p class="text-muted mb-3" data-aos="fade-up" data-aos-delay="100">More selected work across web, mobile, and backend.</p>
+      <a href="index.html" class="btn btn-outline-secondary btn-sm" data-aos="fade-up" data-aos-delay="150">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <!-- Filters -->
+  <section class="py-4" data-aos="fade-up" data-aos-duration="800">
+    <div class="container px-3 px-md-5">
+      <!-- Grid -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="projectGrid">
+
+        <!-- Alubomulla Trade Center App — Flutter (Mobile/Desktop) — Live -->
+        <div class="col project" data-cat="mobile">
+          <div class="card h-100 rounded-3">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Alubomulla Trade Center App — Flutter (Mobile/Desktop) — Live</h5>
+              <p class="card-text text-muted">
+                Cross-platform app for browsing products and managing orders/payments with a clean, responsive UI.
+                Uses REST/JSON APIs and local persistence for smooth, reliable use.
+              </p>
+              <div class="tags mb-2">
+                <span class="tag">Flutter</span>
+                <span class="tag">REST</span>
+                <span class="tag">Offline-first</span>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <!-- TODO: replace # with your real live URL -->
+                <a href="#" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">Live</a>
+                <a href="https://github.com/sandul0205" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">View Code</a>
+                <button class="btn btn-soft btn-sm viewMore"
+                        data-title="Alubomulla Trade Center App"
+                        data-desc="Flutter app (mobile/desktop) for product browsing, orders, billing and daily sales. Offline-friendly cache, printable docs, and REST/JSON backend.">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ERP – Projects Management Mobile App — Flutter -->
+        <div class="col project" data-cat="mobile">
+          <div class="card h-100 rounded-3">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">ERP – Projects Management Mobile App — Flutter</h5>
+              <p class="card-text text-muted">
+                Project/Task lists, status updates, basic analytics, and notifications.
+                Auth, search/filter, and paginated views for larger datasets.
+              </p>
+              <div class="tags mb-2">
+                <span class="tag">Flutter</span>
+                <span class="tag">Auth</span>
+                <span class="tag">Analytics</span>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a href="https://github.com/sandul0205" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">Code</a>
+                <button class="btn btn-soft btn-sm viewMore"
+                        data-title="ERP – Projects Management App"
+                        data-desc="Cross-platform ERP projects/tasks app with secure auth, filters/search, basic analytics, and push-style notifications.">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pet Health Tracking App — Flutter -->
+        <div class="col project" data-cat="mobile">
+          <div class="card h-100 rounded-3">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Pet Health Tracking App — Flutter</h5>
+              <p class="card-text text-muted">
+                Pet profiles, appointment reminders, health notes, and salon booking concept.
+                Built with modular widgets and scalable navigation/state patterns.
+              </p>
+              <div class="tags mb-2">
+                <span class="tag">Flutter</span>
+                <span class="tag">Health</span>
+                <span class="tag">Booking</span>
+              </div>
+              <div class="mt-auto d-flex gap-2">
+                <a href="https://github.com/sandul0205" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">Code</a>
+                <button class="btn btn-soft btn-sm viewMore"
+                        data-title="Pet Health Tracking App"
+                        data-desc="Tracks pets’ profiles, vaccinations/notes, reminders, and includes a grooming/salon booking concept with clean UI components.">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /#projectGrid -->
+    </div>
+  </section>
+
+  <!-- Simple modal for “Details” -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModalTitle">Project</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="projectModalBody">Description</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+
+    // Filters
+    const grid = document.getElementById('projectGrid');
+    const btns = document.querySelectorAll('.filter-btn');
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(x => { x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+      b.classList.add('active'); b.setAttribute('aria-selected','true');
+      const f = b.dataset.filter;
+      grid.querySelectorAll('.project').forEach(card => {
+        const show = f === 'all' || card.dataset.cat === f;
+        card.classList.toggle('d-none', !show);
+      });
+    }));
+
+    // “Details” modal behavior
+    const modalEl = document.getElementById('projectModal');
+    const modal = new bootstrap.Modal(modalEl);
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.viewMore');
+      if (!btn) return;
+      document.getElementById('projectModalTitle').textContent = btn.dataset.title || 'Project';
+      document.getElementById('projectModalBody').textContent = btn.dataset.desc || '';
+      modal.show();
+    });
+  </script>
+</body>
+</html>

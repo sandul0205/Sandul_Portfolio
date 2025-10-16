@@ -1,295 +1,420 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light" data-bs-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sandul Dulhan | Portfolio</title>
-  <!-- Bootstrap & Fonts & Icons -->
+  <title>Sandul Dulhan | Full-Stack Developer</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Full-stack developer skilled in React, Flutter, and Node/NestJS. Clean, accessible UIs and reliable APIs." />
+  <meta name="author" content="Sandul Dulhan" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sandul Dulhan | Full-Stack Developer" />
+  <meta property="og:description" content="React & Flutter on the front end, Node/NestJS on the back end." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/og-cover.jpg" />
+
+  <!-- CSS & Fonts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body style="font-family: 'Poppins', sans-serif;">
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top bg-light custom-navbar shadow-sm">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center text-theme" href="#">
-      <img src="images/logo.png" alt="Sandul Logo" height="40" width="40" class="me-2" />
-      Sandul Dulhan
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<!-- Hero Section -->
-<header class="hero d-flex align-items-center" style="min-height: 100vh; padding-top: 56px;" data-aos="fade-down" data-aos-duration="800">
-  <div class="container">
-    <div class="row align-items-center justify-content-center g-4">
-      <!-- Profile Image -->
-      <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
-        <img src="images/profilePhoto.png" alt="Sandul Dulhan Profile" class="profile-img-custom img-fluid"/>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="scrollBar" aria-hidden="true"></div>
+
+  <!-- Navbar (theme class toggled in JS) -->
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="images/logo.png" alt="Sandul Logo" class="brand-avatar" />
+        <span>Sandul Dulhan</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <button id="themeToggle" class="btn btn-soft btn-sm" type="button" aria-label="Toggle theme">
+              <i class="bi bi-moon-stars" id="themeIcon"></i>
+            </button>
+          </li>
+        </ul>
       </div>
-      <!-- Intro Text -->
-      <div class="col-12 col-md-8">
-        <div class="intro-text text-center text-md-start px-3 px-md-0 py-3"
-             data-aos="fade-left"
-             data-aos-duration="1000">
-          <h1 class="display-6 fw-bold mb-2">
-            Hi, I'm <span class="accent">Sandul Dulhan</span>
-          </h1>
-          <p class="mb-4 fs-5 text-secondary">
-            Mobile & Web Developer | Software Engineering Student
-          </p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start justify-content-center">
-            <a href="Documents/Sandul CV.pdf" class="btn btn-primary me-md-2 mb-2 mb-md-0 px-4" download>
-              <i class="bi bi-download me-1"></i> Download CV
-            </a>
-            <a href="#about" class="btn btn-outline-primary px-4 mb-2 mb-md-0" id="exploreBtn">
-              <i class="bi bi-chevron-double-down me-1"></i> Explore More
-            </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="main" data-aos="fade-down" data-aos-duration="900">
+    <div class="container position-relative">
+      <div class="row align-items-center justify-content-center g-4">
+        <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
+          <div class="profile-wrap">
+            <img src="images/profilePhoto.png" alt="Sandul Dulhan Profile" class="profile-img" loading="eager" />
+          </div>
+        </div>
+        <div class="col-12 col-md-8">
+          <div class="intro-text text-center text-md-start px-3 px-md-0 py-3" data-aos="fade-left" data-aos-duration="1000">
+            <h1 class="display-6 fw-bold mb-2">
+              Sandul Dulhan — <span class="text-primary">Full-Stack Developer</span>
+            </h1>
+            <p class="mb-1 fs-5 text-muted">React & Flutter on the front end, Node.js/NestJS APIs on the back end.</p>
+            <p class="mb-3 fs-6 text-muted">I build clean, accessible UIs and reliable services.</p>
+            <div class="mb-3">
+              <span class="text-muted">Also: </span>
+              <span class="type" id="typewriter" aria-live="polite"></span>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start justify-content-center">
+              <!-- Update this path to your live CV location when deploying -->
+              <a href="sandbox:/mnt/data/Sandul CV.pdf" class="btn btn-primary me-md-2 mb-2 mb-md-0 px-4" download>
+                <i class="bi bi-download me-1"></i> Download CV
+              </a>
+              <a href="#projects" class="btn btn-outline-primary px-4 mb-2 mb-md-0">
+                <i class="bi bi-kanban me-1"></i> See Projects
+              </a>
+              <button class="btn btn-soft px-4 mb-2 mb-md-0" id="printResume"><i class="bi bi-printer me-1"></i> Print</button>
+            </div>
+            <span class="open-pill mt-3"><i class="bi bi-rocket-takeoff me-1"></i> Open to Junior/Intern Roles</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- About Section -->
-<section id="about" class="py-5 bg-light">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card border-0 shadow rounded-4">
-          <!-- Card Header -->
-          <div class="card-header bg-primary text-white text-center rounded-top-4 pb-4 pt-4">
-            <h2 class="fw-bold mb-1">About Me</h2>
-          </div>
-          <!-- Card Body -->
-          <div class="card-body p-4">
-            <p class="mb-3">
-              I am a motivated software engineering student at <span class="fw-semibold">ICBT Campus</span>, with a Higher National Diploma (HND) in Computing and Software Engineering. I am currently advancing my studies toward a degree in Software Engineering.
-            </p>
-            <p class="mb-3">
-              My technical expertise includes <span class="fw-semibold">HTML</span>, <span class="fw-semibold">CSS</span>, <span class="fw-semibold">JavaScript</span>, and <span class="fw-semibold">PHP</span>. I also work with <span class="fw-semibold">Angular</span>, <span class="fw-semibold">React</span>, <span class="fw-semibold">MySQL</span>, <span class="fw-semibold">Android Studio</span>, <span class="fw-semibold">Flutter</span>, <span class="fw-semibold">Nest.js</span>, and <span class="fw-semibold">Node.js</span>.
-            </p>
-            <p class="mb-4">
-              I am passionate about creating responsive web and mobile applications focused on user experience and real-world impact. My approach is centered on practical solutions and ongoing learning.
-            </p>
-            <div class="pt-3 border-top">
-              <div class="fw-semibold">Current Role:</div>
-              <div class="text-muted">Mobile App Developer Intern &mdash; hands-on training in mobile app development using Flutter</div>
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card border-0 rounded-4">
+            <div class="card-header text-center rounded-top-4 pb-4 pt-4">
+              <h2 class="section-title mb-0">About</h2>
+            </div>
+            <div class="card-body p-4">
+              <p class="mb-3">
+                Full-stack developer building clean, responsive UIs and reliable APIs. Experienced with React (frontend), Node.js/NestJS (backend), and Flutter (mobile). Comfortable with REST, JWT auth, SQL data modeling, and Git/GitHub collaboration.
+              </p>
+              <p class="mb-0">
+                Strong problem-solving from A/L Mathematics and hands-on internship experience shipping features, fixing bugs, and improving performance — currently reading a BSc (Hons) in Software Engineering.
+              </p>
+              <div class="pt-3 mt-3 border-top small text-muted d-flex flex-wrap gap-3">
+                <span>Based in Sri Lanka</span>
+                <span>Focus: Web & Mobile</span>
+                <span>Interests: performance, UX, clean code</span>
+                <button class="btn btn-soft btn-sm" id="copyEmail"><i class="bi bi-clipboard me-1"></i> Copy Email</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Skills Section -->
-<section id="skills" class="bg-light py-5" data-aos="fade-up" data-aos-duration="800">
-  <div class="container px-5">
-    <h2 class="text-center mb-4" data-aos="zoom-in" data-aos-delay="100">Skills</h2>
-    <div class="row text-center g-4">
-      <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="100">
-        <div class="card border-0 shadow-sm py-3 rounded-3">
-          <i class="fab fa-html5 fa-3x text-danger mb-2"></i>
-          <h5 class="mb-0">HTML5</h5>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="200">
-        <div class="card border-0 shadow-sm py-3 rounded-3">
-          <i class="fab fa-css3-alt fa-3x text-primary mb-2"></i>
-          <h5 class="mb-0">CSS3</h5>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="300">
-        <div class="card border-0 shadow-sm py-3 rounded-3">
-          <i class="fab fa-js fa-3x text-warning mb-2"></i>
-          <h5 class="mb-0">JavaScript</h5>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="400">
-        <div class="card border-0 shadow-sm py-3 rounded-3">
-          <i class="fab fa-react fa-3x text-info mb-2"></i>
-          <h5 class="mb-0">React</h5>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="500">
-        <div class="card border-0 shadow-sm py-3 rounded-3">
-          <img src="images/flutter.png" alt="Flutter Icon" style="display:block;margin:auto;max-width:50px;max-height:50px;" class="mb-2" />
-          <h5 class="mb-0">Flutter</h5>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="600">
-        <div class="card border-0 shadow-sm py-3 rounded-3">
-          <i class="fas fa-database fa-3x text-success mb-2"></i>
-          <h5 class="mb-0">SQL/MySQL</h5>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="650">
-        <div class="card border-0 shadow-sm py-3 rounded-3">
-          <i class="fab fa-php fa-3x text-primary mb-2"></i>
-          <h5 class="mb-0">PHP</h5>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="700">
-        <div class="card border-0 shadow-sm py-3 rounded-3">
-          <i class="fab fa-android fa-3x text-success mb-2"></i>
-          <h5 class="mb-0">Android Studio</h5>
-        </div>
-      </div>
-      <div class="col-6 col-md-3" data-aos="flip-left" data-aos-delay="800">
-        <div class="card border-0 shadow-sm py-3 rounded-3">
-          <i class="fab fa-java fa-3x text-warning mb-2"></i>
-          <h5 class="mb-0">Java</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Education Section -->
-<section id="education" class="py-5" style="background-color: #e9f0ff;" data-aos="fade-up" data-aos-duration="800">
-  <div class="container">
-    <h2 class="text-center mb-5" data-aos="zoom-in" data-aos-delay="100">
-      <i class="fas fa-graduation-cap"></i>
-      Education
-    </h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-12 col-md-6 d-flex" data-aos="fade-right" data-aos-delay="200">
-        <div class="edu-card w-100 shadow rounded p-3">
-          <div class="edu-card-header bg-primary text-white rounded-top py-2 px-3 mb-2">
-            <i class="fas fa-user-graduate me-2"></i>
-            Higher National Diploma in Software Engineering (Completed, Pending Results)
-          </div>
-          <div class="edu-card-body">
-            <h5 class="text-primary">ICBT Campus</h5>
-            <p class="mb-1">2023 Nov - 2025</p>
+  <!-- Skills -->
+  <section id="skills" class="py-5" data-aos="fade-up" data-aos-duration="800">
+    <div class="container px-4 px-md-5">
+      <h2 class="text-center mb-4 section-title" data-aos="zoom-in" data-aos-delay="100">Skills</h2>
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <div class="card p-3">
+            <h6 class="mb-3 text-muted">Core</h6>
+            <div>
+              <span class="skill-chip"><i class="fab fa-react"></i> React</span>
+              <span class="skill-chip"><i class="fab fa-html5"></i> HTML</span>
+              <span class="skill-chip"><i class="fab fa-css3-alt"></i> CSS</span>
+              <span class="skill-chip"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="skill-chip"><img src="images/flutter.png" alt="Flutter" width="16" height="16" /> Flutter/Dart</span>
+              <span class="skill-chip"><i class="fa-solid fa-server"></i> Node/Express</span>
+              <span class="skill-chip"><i class="fa-solid fa-cube"></i> NestJS</span>
+              <span class="skill-chip"><i class="fas fa-database"></i> SQL/MySQL</span>
+              <span class="skill-chip"><i class="fab fa-git-alt"></i> Git/GitHub</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-12 col-md-6 d-flex" data-aos="fade-left" data-aos-delay="300">
-        <div class="edu-card w-100 shadow rounded p-3">
-          <div class="edu-card-header bg-primary text-white rounded-top py-2 px-3 mb-2">
-            <i class="fas fa-university me-2"></i>
-            Diploma in Information Technology
-          </div>
-          <div class="edu-card-body">
-            <h5 class="text-primary">ESOFT Metro Campus</h5>
-            <p class="mb-1">2024</p>
+        <div class="col-12 col-lg-6">
+          <div class="card p-3">
+            <h6 class="mb-3 text-muted">Strength meters</h6>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between"><small>React</small><small>90%</small></div>
+              <div class="skill-bar" data-progress="90"><span></span></div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between"><small>Node/Nest</small><small>80%</small></div>
+              <div class="skill-bar" data-progress="80"><span></span></div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between"><small>Flutter/Dart</small><small>75%</small></div>
+              <div class="skill-bar" data-progress="75"><span></span></div>
+            </div>
+            <div class="mb-1">
+              <div class="d-flex justify-content-between"><small>SQL</small><small>70%</small></div>
+              <div class="skill-bar" data-progress="70"><span></span></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Projects Section -->
-<section id="projects" class="bg-white py-5" data-aos="fade-up" data-aos-duration="800">
-  <div class="container px-3 px-md-5">
-    <h2 class="text-center mb-5" data-aos="zoom-in" data-aos-delay="100">Projects</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <!-- Project 1: GitHub -->
-      <div class="col" data-aos="zoom-in-up" data-aos-delay="300">
-        <div class="card h-100 shadow-sm rounded-3">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">City Cylcle App</h5>
-            <p class="card-text">A Cycle App for managing Cycle Rentals. Built with Android Studio and MySQL.</p>
-            <a href="https://github.com/sandul0205/city_cycle_app" class="btn btn-outline-success mt-auto" target="_blank">View on GitHub</a>
-          </div>
-        </div>
-      </div>
-      <!-- Project 2: Golden Kennel App -->
-      <div class="col" data-aos="zoom-in-up" data-aos-delay="300">
-        <div class="card h-100 shadow-sm rounded-3">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Golden Kennel App</h5>
-            <p class="card-text">A pet care app for managing appointments, pet health, and reviews. Built with Flutter and MySQL.</p>
-            <a href="https://github.com/sandul0205/Golden_Kennel" class="btn btn-outline-success mt-auto" target="_blank">View on GitHub</a>
-          </div>
-        </div>
-      </div>
-      <!-- Project 3: Care Compass Hospital Website -->
-      <div class="col" data-aos="zoom-in-up" data-aos-delay="350">
-        <div class="card h-100 shadow-sm rounded-3">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Care Compass Hospital Website</h5>
-            <p class="card-text">A hospital management website for booking appointments, viewing doctor profiles, and managing patient records. Built with HTML, CSS, JavaScript, and MySQL.</p>
-            <a href="https://github.com/sandul0205/CareCompassHospitals" class="btn btn-outline-success mt-auto" target="_blank">View on GitHub</a>
+  <!-- Experience -->
+  <section id="experience" class="py-5" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="text-center mb-5 section-title"><i class="fa-solid fa-briefcase me-2"></i>Experience</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card rounded-4 p-3 p-md-4">
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-bullet"></div>
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2">
+                  <div>
+                    <h5 class="mb-1">Intern Software Engineer — Flutter/Dart & NestJS</h5>
+                    <div class="text-muted">CODESYS (Pvt) Ltd — Malabe, Sri Lanka</div>
+                  </div>
+                  <div class="text-muted fw-semibold">Mar 2025 – Aug 2025</div>
+                </div>
+                <ul class="mt-2 mb-4 text-muted">
+                  <li>Built Flutter features and integrated REST APIs; assisted NestJS backend.</li>
+                  <li>Analyzed system flows/specs and collaborated with the team.</li>
+                  <li>Contributed to SEO/branding support as needed.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row text-center g-4 mt-2">
+              <div class="col">
+                <div class="card p-3">
+                  <div class="h4 mb-0" data-count="12">0</div>
+                  <small class="text-muted">Projects</small>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card p-3">
+                  <div class="h4 mb-0" data-count="4">0</div>
+                  <small class="text-muted">Live Apps</small>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card p-3">
+                  <div class="h4 mb-0" data-count="18">0</div>
+                  <small class="text-muted">Certificates</small>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact Section -->
-<section id="contact" class="bg-light py-5" data-aos="fade-up" data-aos-duration="800">
-  <div class="container">
-    <h2 class="text-center mb-5">Get In Touch</h2>
-    <div class="row g-4">
-      <div class="col-12 col-md-5" data-aos="fade-right" data-aos-delay="200">
-        <div class="p-4 bg-white shadow rounded h-100">
-          <h5><i class="fas fa-phone-alt me-2"></i>Phone</h5>
-          <p class="mb-3">+94 71 88 19 658 | +94 77 30 30 382</p>
-          <h5><i class="fas fa-envelope me-2"></i>Email</h5>
-          <p class="mb-4">kadsdulhan@gmail.com</p>
-          <div class="d-flex gap-2">
-            <a href="https://github.com/sandul0205" target="_blank" class="btn rounded-circle" style="background:#000;color:#fff;width:40px;height:40px;">
-              <i class="bi bi-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/sandul-dulhan-123456789/" target="_blank" class="btn rounded-circle" style="background:#0077b5;color:#fff;width:40px;height:40px;">
-              <i class="bi bi-linkedin"></i>    
-            </a>
+  <!-- Education -->
+  <section id="education" class="py-5" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="text-center mb-5 section-title"><i class="fas fa-graduation-cap me-2"></i>Education</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-6 d-flex" data-aos="fade-right" data-aos-delay="150">
+          <div class="card w-100 rounded p-3">
+            <div class="rounded-top py-2 px-3 mb-2 border-bottom">BSc (Hons) in Software Engineering (Reading)</div>
+            <div>
+              <h5 class="text-primary fw-bold">Cardiff Metropolitan University (via ICBT)</h5>
+              <p class="mb-1 text-muted">Following</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex" data-aos="fade-left" data-aos-delay="200">
+          <div class="card w-100 rounded p-3">
+            <div class="rounded-top py-2 px-3 mb-2 border-bottom">HND in Computing & Software Engineering — Merit Pass</div>
+            <div>
+              <h5 class="text-primary fw-bold">ICBT Campus</h5>
+              <p class="mb-1 text-muted">Nov 2023 – Aug 2025</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex" data-aos="fade-right" data-aos-delay="250">
+          <div class="card w-100 rounded p-3">
+            <div class="rounded-top py-2 px-3 mb-2 border-bottom">Assured Diploma in Information Technology (DITEC)</div>
+            <div>
+              <h5 class="text-primary fw-bold">ESOFT Metro Campus</h5>
+              <p class="mb-1 text-muted">Nov 2023</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex" data-aos="fade-left" data-aos-delay="300">
+          <div class="card w-100 rounded p-3">
+            <div class="rounded-top py-2 px-3 mb-2 border-bottom">G.C.E. A/L — Mathematics Stream (2C, 1S)</div>
+            <div>
+              <h5 class="text-primary fw-bold">Prince of Wales’ College, Moratuwa</h5>
+              <p class="mb-1 text-muted">2022</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-7" data-aos="fade-left" data-aos-delay="400">
-        <form action="#" class="p-4 bg-white shadow rounded">
-          <div class="mb-3"><input type="text" class="form-control" placeholder="Your Name" required /></div>
-          <div class="mb-3"><input type="email" class="form-control" placeholder="Your Email" required /></div>
-          <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Your Message" required></textarea></div>
-          <button type="submit" class="btn btn-custom w-100 btn-primary">Send Message</button>
-        </form>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-5" data-aos="fade-up" data-aos-duration="800">
+    <div class="container px-3 px-md-5">
+      <h2 class="text-center mb-3 section-title" data-aos="zoom-in" data-aos-delay="100">Projects</h2>
+
+      <!-- Filters -->
+      <div class="filters mb-4" role="tablist" aria-label="Project filters">
+        <button class="filter-btn active" data-filter="all" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="backend">Backend/API</button>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="projectGrid">
+        <!-- Project 1 -->
+        <div class="col project" data-cat="mobile">
+          <div class="card h-100 rounded-3">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Alubomulla Trade Center — Cloud System</h5>
+              <p class="card-text text-muted">Cross-platform app (Flutter) with Node/Express API. ERP & POS: inventory, orders, billing, daily sales.</p>
+              <div class="tags mb-2"><span class="tag">Flutter</span><span class="tag">Node</span><span class="tag">MySQL</span></div>
+              <div class="mt-auto d-flex gap-2">
+                <a href="https://sandul0205.github.io/Sandul_Portfolio/" class="btn btn-outline-primary btn-sm" target="_blank">Live / Portfolio</a>
+                <button class="btn btn-soft btn-sm viewMore" data-title="Alubomulla Trade Center" data-desc="Flutter cross-platform ERP/POS app with secure auth, offline-friendly caching, and printable invoices.">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col project" data-cat="backend">
+          <div class="card h-100 rounded-3">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">NestJS CRM — Backend/API</h5>
+              <p class="card-text text-muted">CRM modules (customers, leads, activities), JWT auth, input validation, REST endpoints.</p>
+              <div class="tags mb-2"><span class="tag">NestJS</span><span class="tag">JWT</span><span class="tag">REST</span></div>
+              <div class="mt-auto d-flex gap-2">
+                <a href="https://github.com/sandul0205" class="btn btn-outline-primary btn-sm" target="_blank">GitHub</a>
+                <button class="btn btn-soft btn-sm viewMore" data-title="NestJS CRM" data-desc="Modular API with typed DTOs, Guards, and Prisma/TypeORM-ready structure for quick scaling.">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col project" data-cat="web">
+          <div class="card h-100 rounded-3">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Menty Tours — Tourism Website</h5>
+              <p class="card-text text-muted">Mobile-first React UI with routing and reusable components; Node/Express API for inquiries and content.</p>
+              <div class="tags mb-2"><span class="tag">React</span><span class="tag">Node</span><span class="tag">SEO</span></div>
+              <div class="mt-auto d-flex gap-2">
+                <a href="https://github.com/sandul0205" class="btn btn-outline-primary btn-sm" target="_blank">View Code</a>
+                <a href="https://mentytours.com" class="btn btn-soft btn-sm" target="_blank">Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Explore more CTA -->
+      <div class="text-center mt-3 mt-md-4" data-aos="fade-up" data-aos-delay="150">
+        <a href="projects.html" class="btn explore-more-btn">
+          Explore other projects
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13 5l7 7-7 7M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <p class="small text-muted mt-2 mb-0">See more web, mobile, and backend work</p>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="text-center mb-5 section-title">Get In Touch</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-5" data-aos="fade-right" data-aos-delay="150">
+          <div class="p-4 card rounded h-100 contact-card">
+            <h5><i class="fas fa-phone-alt me-2"></i>Phone</h5>
+            <p class="mb-3"><a href="tel:+94705135373" class="link-body-emphasis text-decoration-none">+94 70 513 5373</a></p>
+            <h5><i class="fas fa-envelope me-2"></i>Email</h5>
+            <p class="mb-4"><a href="mailto:kadsdulhan@gmail.com" class="link-body-emphasis text-decoration-none">kadsdulhan@gmail.com</a></p>
+            <div class="d-flex gap-2">
+              <a href="https://github.com/sandul0205" target="_blank" class="btn icon-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a href="https://www.linkedin.com/in/sandul-dulhan-90a7ab275" target="_blank" class="btn icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-7" data-aos="fade-left" data-aos-delay="250">
+          <form id="contactForm" class="p-4 card" novalidate>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="name" placeholder="Your Name" required />
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" placeholder="Your Email" required />
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" id="message" rows="4" placeholder="Your Message" minlength="10" required></textarea>
+              <div class="invalid-feedback">Message should be at least 10 characters.</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            <small class="text-muted d-block mt-2">Client-side validation only. Connect a backend or Formspree later.</small>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-4 pb-3">
+    <div class="container text-center">
+      <p class="mb-3 small">&copy; <span id="year"></span> Sandul Dulhan. All rights reserved.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="https://github.com/sandul0205" class="btn icon-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/sandul-dulhan-90a7ab275" class="btn icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="toTop" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></button>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-fab" href="https://wa.me/94705135373?text=Hi%20Sandul!%20I%20saw%20your%20portfolio." target="_blank" aria-label="WhatsApp chat"><i class="bi bi-whatsapp"></i></a>
+
+  <!-- Project Modal -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-surface">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">Project</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBody">Details here…</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-soft" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Footer -->
-<footer class="bg-dark text-white pt-4 pb-3" data-aos="fade-up" data-aos-duration="800">
-  <div class="container text-center">
-    <p class="mb-3 small">&copy; 2025 Sandul Dulhan. All rights reserved.</p>
-    <div class="d-flex justify-content-center gap-3 flex-wrap">
-      <a href="https://github.com/sandul0205" class="btn rounded-circle" style="background:#000;color:#fff;width:40px;height:40px;">
-        <i class="bi bi-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/sandul-dulhan-90a7ab275" class="btn rounded-circle" style="background:#0077b5;color:#fff;width:40px;height:40px;">
-        <i class="bi bi-linkedin"></i>
-      </a>
-    </div>
-  </div>
-</footer>
+  <div class="toasty" id="toast" role="status" aria-live="polite">Copied!</div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
